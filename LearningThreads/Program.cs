@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace LearningThreads
 {
@@ -7,10 +8,17 @@ namespace LearningThreads
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 555; i++)
             {
                 Thread mythread = new Thread(new ThreadStart(Work));
                 mythread.Start();
+
+                Task.Run(() =>
+                {
+                    Console.WriteLine("Starting in thread: " + Thread.CurrentThread.ManagedThreadId);
+                    Thread.Sleep(3000);
+                    Console.WriteLine("Doing threads");
+                });
             }
 
             Console.ReadLine();
@@ -18,9 +26,9 @@ namespace LearningThreads
 
         static void Work()
         {
-            Console.WriteLine("Starting in thread: " + Thread.CurrentThread.ManagedThreadId);
-            Thread.Sleep(2000);
-            Console.WriteLine("Doing work");
+                    Console.WriteLine("Starting in thread: " + Thread.CurrentThread.ManagedThreadId);
+                    Thread.Sleep(3000);
+                    Console.WriteLine("Doing work");
         }
     }
 }
