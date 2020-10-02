@@ -6,10 +6,10 @@ namespace LearningNulls
     {
         static void Main(string[] args)
         {
-            var s1 = "hello";
+            String s1 = null; // "hello";
             var s2 = s1 ?? "default";
 
-            Console.WriteLine($"s2");
+            Console.WriteLine(s2);
         }
     }
 }
