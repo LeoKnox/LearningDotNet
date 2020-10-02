@@ -6,8 +6,8 @@ namespace LearningNulls
     {
         static void Main(string[] args)
         {
-            String s1 = null; // "hello";
-            var s2 = s1 ?? "default";
+            int? s1 = 1; // "hello";
+            int s2 = s1 ?? 2;
 
             Console.WriteLine(s2);
         }
