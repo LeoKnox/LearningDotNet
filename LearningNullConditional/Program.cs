@@ -11,7 +11,7 @@ namespace LearningNullConditional
         static void Main(string[] args)
         {
             Person person = new Person() { }; // wht if this was null? would give errror
-            Console.WriteLine(person.Name?.Length);
+            Console.WriteLine(person?.Name ?? "This hero has no name!");
         }
     }
 }
